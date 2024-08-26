@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Chat Room</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Join Chat Room Screen -->
+        <div class="screen join-screen active">
+            <div class="form">
+                <h2>Join Chat Room</h2>
+                <div class="form-input">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <button id="join-chat">Join Chat</button>
+            </div>
+        </div>
+
+        <!-- Chat Room Screen -->
+        <div class="screen chat-screen">
+            <div class="header">
+                <button id="toggle-user-list">Users</button>
+                <div class="logo">ChatRoom</div>
+                <button id="exit-chat">Leave</button>
+            </div>
+            <div class="chat-container">
+                <div id="user-list-container" class="hidden">
+                    <div class="user-list"></div>
+                </div>
+                <div class="messages"></div>
+            </div>
+            <div class="typebox">
+              <input type="file" id="file-input" style="display: none;" />
+                <button id="upload-file"><i class="ri-upload-line"></i></button>
+                <input type="text" id="message-input" placeholder="Type a message..." required>
+                <button id="send-message">Send</button>
+            </div>
+            <div class="typing"></div>
+        </div>
+    </div>
+
+    <!-- Include Socket.IO script -->
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+</body>
+
+</html>
